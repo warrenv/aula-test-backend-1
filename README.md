@@ -47,3 +47,4 @@ To show basic functionality, text files are returned instead of audio files.
       - extract metadata and update the songs list.
   - Add redis to cache the song catalog.
   - Add better error handling/reporting.
+  - Add header parsing and code to allow for playback to start anywhere in the file.
