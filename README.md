@@ -46,3 +46,4 @@ To show basic functionality, text files are returned instead of audio files.
   - Add the ability to upload files.
       - extract metadata and update the songs list.
   - Add redis to cache the song catalog.
+  - Add better error handling/reporting.
