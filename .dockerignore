@@ -1,13 +1,10 @@
-Dockerfile
 coverage
 dist
 docker-compose*
 .github
 .gitignore
 .idea
-makefile
 node_modules
 .nyc_output
 openapi.yaml
 .travis.yml
-.nvmrc

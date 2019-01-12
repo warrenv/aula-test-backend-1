@@ -1,4 +1,6 @@
-FROM node:10.14.2
+FROM node:10.15.0
+
+RUN echo 'PS1="\u@${PROJECT_NAME:-noProject}/${SERVICE_NAME:-noService}:\w# "' >> ~/.bashrc
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
