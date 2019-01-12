@@ -9,15 +9,14 @@ const host = process.env.HOST || 'localhost'
 describe('tests/functional/retrieve_song', async assert => {
   const server = app().listen({ port, host }, () => { })
 
-  const songsRequest = await fetch(`http://${host}:${port}/songs`)
-  const songsResponse = await songsRequest.json()
-  const { id } = songsResponse[0]
-  const songRequest = await fetch(`http://${host}:${port}/song/${id}`)
+  const songsResponse = await fetch(`http://${host}:${port}/songs`)
+  const songs = await songsResponse.json()
+  const songResponse = await fetch(`http://${host}:${port}/song/${songs[0].id}`)
 
   assert({
     given: 'a request for a song by id',
     should: 'return success',
-    actual: songRequest.status,
+    actual: songResponse.status,
     expected: 200,
   })
 

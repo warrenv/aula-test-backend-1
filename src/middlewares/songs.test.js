@@ -4,7 +4,7 @@ import middleware from './songs'
 
 describe('src/middlewares/songs', async assert => {
   {
-    const ctx = { request: { url: '/' } }
+    const ctx = { request: { url: '/' }, state: {} }
     const next = sinon.spy()
 
     await middleware(ctx, next)
@@ -23,6 +23,7 @@ describe('src/middlewares/songs', async assert => {
         set: () => {},
       },
       request: { url: '/songs' },
+      state: {},
     }
     const next = sinon.spy()
 

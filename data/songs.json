@@ -1,14 +1,23 @@
 [
   {
     "id": "1",
-    "title": "Song 1",
-    "artist": "Song 1 Artist",
-    "filename": "songs/song1.mp3"
+    "title": "Fallin'",
+    "artist": "Sunrise Blvd",
+    "site": "http://www.freemusicpublicdomain.com/royalty-free-hard-rock-music/",
+    "filename": "songs/Fallin-extended-mix.mp3"
   },
   {
     "id": "2",
-    "title": "Song 2",
-    "artist": "Song 2 Artist",
-    "filename": "songs/song2.mp3"
+    "title": "Extremes",
+    "artist": "The Lemming Shepherds",
+    "site": "http://www.freemusicpublicdomain.com/royalty-free-hard-rock-music/",
+    "filename": "songs/Extremes-The_Lemming_Shepherds.mp3"
+  },
+  {
+    "id": "3",
+    "title": "The Nymphaeum  Part V",
+    "artist": "Angelwing",
+    "site": "http://www.freemusicpublicdomain.com/royalty-free-hard-rock-music/",
+    "filename": "songs/The_Nymphaeum_V-Angelwing.mp3"
   }
 ]

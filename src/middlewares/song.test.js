@@ -4,13 +4,15 @@ import middleware from './song'
 
 describe('src/middlewares/song', async assert => {
   {
-    const ctx = { request: { url: '/' } }
+    const ctx = {
+      url: '/',
+    }
     const next = sinon.spy()
 
     await middleware(ctx, next)
 
     assert({
-      given: 'a request url other than /song/:id',
+      given: 'a request url other than /songs/:id',
       should: 'call the next middleware',
       actual: next.calledOnce,
       expected: true,
@@ -22,7 +24,8 @@ describe('src/middlewares/song', async assert => {
       response: {
         set: () => {},
       },
-      request: { url: '/song/1' },
+      url: '/songs/1',
+      state: { songs: [] },
     }
     const next = sinon.spy()
 
