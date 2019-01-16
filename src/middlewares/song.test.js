@@ -24,6 +24,7 @@ describe('src/middlewares/song', async assert => {
       response: {
         set: () => {},
       },
+      get: () => {},
       url: '/songs/1',
       state: { songs: [] },
     }
