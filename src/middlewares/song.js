@@ -1,3 +1,5 @@
+// See https://www.codeproject.com/Articles/813480/HTTP-Partial-Content-In-Node-js
+
 import * as fs from 'fs'
 
 const songPath = new RegExp('^/songs/[0-9]+$')
@@ -5,14 +7,14 @@ const idFrom = url => url.split('/').pop()
 
 const readRangeHeader = (range, totalLength) => {
   /*
-         * Example of the method 'split' with regular expression.
-         *
-         * Input: bytes=100-200
-         * Output: [null, 100, 200, null]
-         *
-         * Input: bytes=-200
-         * Output: [null, null, 200, null]
-         */
+   * Example of the method 'split' with regular expression.
+   *
+   * Input: bytes=100-200
+   * Output: [null, 100, 200, null]
+   *
+   * Input: bytes=-200
+   * Output: [null, null, 200, null]
+   */
 
   if (range === null || range.length === 0) { return null }
 
@@ -41,7 +43,6 @@ const filenameFromId = songs => id => songs
   .filter(song => song.id === id)
   .map(({ filename }) => `./data/${filename}`)[0]
 
-// See https://www.codeproject.com/Articles/813480/HTTP-Partial-Content-In-Node-js
 const songData = (rangeHeader, filename) => {
   const stat = fs.statSync(filename)
   const rangeRequest = readRangeHeader(rangeHeader, stat.size)
@@ -56,7 +57,6 @@ const songData = (rangeHeader, filename) => {
       ],
 
       //  If not, will return file directly.
-      //  sendResponse(response, 200, responseHeaders, fs.createReadStream(filename))
       response: 200,
       stream: fs.createReadStream(filename),
     }
