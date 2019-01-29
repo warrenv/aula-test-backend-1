@@ -23,7 +23,7 @@ describe('src/middlewares/songs', async assert => {
         set: () => {},
       },
       request: { url: '/songs' },
-      state: {},
+      state: { songs: [] },
     }
     const next = sinon.spy()
 
